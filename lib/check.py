@@ -35,8 +35,7 @@ def checkSource(source):
 	return source
 
 def checkVerbose(ver):
-	verb = int(ver)
-	if   verb == 0: return 1
+	if   (verb := int(ver)) == 0: return 1
 	elif verb == 1: return 1
 	elif verb == 2: return 2
 	else: return 3

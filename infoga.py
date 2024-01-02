@@ -35,8 +35,7 @@ class infoga(object):
 		self.report = None
 
 	def search(self,module):
-		emails = module.search()
-		if emails != ([] or None):
+		if (emails := module.search()) != ([] or None):
 			for email in emails:
 				if email not in self.listEmail:
 					self.listEmail.append(email)
@@ -91,8 +90,7 @@ class infoga(object):
 			sys.exit(warn('Not found emails... :(')) 
 		
 		for email in self.listEmail:
-			ip = self.tester(email)
-			if ip != ([] or None):
+			if (ip := self.tester(email)) != ([] or None):
 				ips = []
 				for i in ip:
 					if i not in ips:ips.append(i)
