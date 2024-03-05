@@ -47,7 +47,8 @@ class http:
 		except Exception as error:
 			return error
 
-	def urllib(self,url,payload,headers={"User-agent":user_agent}):
+	def urllib(self,url,payload,headers=None):
+		headers = {"User-agent":user_agent} if headers is None else headers
 		try:
 			con = urllib2.Request(url,payload,headers)
 			return urllib2.urlopen(con).read()
